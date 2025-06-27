@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use(express.static(__dirname));
 
 // Load users
 const users = JSON.parse(fs.readFileSync("users.json"));
