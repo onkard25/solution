@@ -1,48 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>One Stop Solution</title>
+    <meta charset="UTF-8">
+    <title>Lakshya Bank</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        .header {
+            background-color: #ff6b6b;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
+            position: relative;
+            padding: 20px 0;
         }
-        h1 {
-            background-color: #ff6b6b;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 10px;
-        }
-        .branch-buttons {
-            margin-top: 30px;
+
+        .menu-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
             display: flex;
-            gap: 40px;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 25px;
+            height: 20px;
         }
-        .branch-buttons a {
-            text-decoration: none;
-            background-color: #4caf50;
+
+        .menu-button div {
+            height: 4px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        .logo {
+            position: absolute;
+            right: 20px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .bank-name {
+            font-size: 28px;
             color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
             font-weight: bold;
-            transition: background-color 0.3s;
         }
-        .branch-buttons a:hover {
-            background-color: #388e3c;
+
+        /* Sidebar */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            z-index: 1000;
         }
+
+        .sidebar a {
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        #home { background-color: #fdfdfd; }
+        #services { background-color: #e7f5fe; }
+        #login { background-color: #fff0f0; }
+        #contact { background-color: #f1f1f1; }
     </style>
 </head>
 <body>
-    <h1>One Stop Solution for all your Problems regarding...</h1>
-    <div class="branch-buttons">
-        <a href="finance.html">Finance</a>
-        <a href="insurance.html">Insurance</a>
+
+    <!-- Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <span class="closebtn" onclick="closeNav()">&times;</span>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#login">Login</a>
+        <a href="#contact">Contact Us</a>
     </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="menu-button" onclick="openNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="bank-name">Lakshya Bank</div>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Bank_icon.svg" alt="Bank Logo">
+        </div>
+    </div>
+
+    <!-- Page Sections -->
+    <div id="home" class="section">
+        <h2>Welcome to Lakshya Bank</h2>
+        <p>Your trusted partner for finance and growth.</p>
+    </div>
+
+    <div id="services" class="section">
+        <h2>Our Services</h2>
+        <p>Savings, Loans, Investments and more...</p>
+    </div>
+
+    <div id="login" class="section">
+        <h2>Login</h2>
+        <p>Secure login for our valued customers.</p>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Email: support@lakshyabank.com</p>
+        <p>Phone: +91-123-456-7890</p>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+
 </body>
 </html>
+
