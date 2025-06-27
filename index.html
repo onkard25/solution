@@ -1,22 +1,48 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My First Website</title>
+    <title>One Stop Solution</title>
     <style>
         body {
             font-family: sans-serif;
-            text-align: center;
-            background-color: #f5f5f5;
-            padding: 50px;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
         h1 {
-            color: #ff6b6b;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+        }
+        .branch-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 40px;
+        }
+        .branch-buttons a {
+            text-decoration: none;
+            background-color: #4caf50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .branch-buttons a:hover {
+            background-color: #388e3c;
         }
     </style>
 </head>
 <body>
-    <h1>Hello, world!</h1>
-    <p>Welcome to my first hosted website 🎉</p>
+    <h1>One Stop Solution For...</h1>
+    <div class="branch-buttons">
+        <a href="finance.html">Finance</a>
+        <a href="insurance.html">Insurance</a>
+    </div>
 </body>
 </html>
