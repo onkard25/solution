@@ -15,16 +15,21 @@ const users = JSON.parse(fs.readFileSync("users.json"));
 app.post("/api/login", (req, res) => {
     const { username, password } = req.body;
 
+    console.log("Login Attempt:", { username, password });
+
     const user = users.find(
         (u) => u.username === username && u.password === password
     );
 
     if (user) {
+        console.log("✅ Login successful");
         res.json({ success: true });
     } else {
+        console.log("❌ Invalid login");
         res.status(401).json({ success: false, message: "Invalid credentials" });
     }
 });
+
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
